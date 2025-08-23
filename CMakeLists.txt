@@ -32,11 +32,16 @@ set(UTIL_SOURCES
     src/utils/Utils.cpp
 )
 
+set(NETWORK_SOURCES
+    src/network/NetworkManager.cpp
+)
+
 add_executable(chess
     src/main.cpp
     ${CORE_SOURCES}
     ${UI_SOURCES}
     ${UTIL_SOURCES}
+    ${NETWORK_SOURCES}
 )
 
 find_package(Threads REQUIRED)

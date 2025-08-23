@@ -17,7 +17,7 @@ A console-based chess game implementation in C++ featuring a clean, modular arch
 
 ```bash
 # Compile the chess game
-g++ -std=c++17 -Iinclude -o chess.out src/main.cpp src/core/*.cpp src/ui/*.cpp src/utils/*.cpp
+g++ -std=c++17 -Iinclude -o chess.out src/main.cpp src/core/*.cpp src/ui/*.cpp src/utils/*.cpp src/network/*.cpp
 
 # Compile the test program
 g++ -std=c++17 -Iinclude -o tests/test_chess.out tests/test_chess.cpp src/core/*.cpp src/ui/*.cpp src/utils/*.cpp
@@ -28,6 +28,14 @@ g++ -std=c++17 -Iinclude -o tests/test_chess.out tests/test_chess.cpp src/core/*
 ```bash
 # Start interactive chess game
 ./chess.out
+
+# Start network game as server (white)
+./chess.out --server 5000
+
+# Start network game as client (black)
+./chess.out --client 127.0.0.1 5000
+
+Network play currently supports normal moves and the `quit` command. Other commands like `undo` or `draw` are local-only.
 
 # Run test program
 ./tests/test_chess.out
